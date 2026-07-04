@@ -1,0 +1,44 @@
+{
+  "project_name": "taihu_ndvi_fai_codex",
+  "gee_project": "dulcet-nucleus-498308-g8",
+  "date_range": {
+    "start": "2024-05-01",
+    "end": "2024-07-31"
+  },
+  "aoi": {
+    "bbox_wgs84": [
+      119.8,
+      30.9,
+      120.95,
+      31.55
+    ],
+    "preferred_vector": "data/aoi/taihu_lake_boundary_no_east_taihu.geojson",
+    "subregions_vector": "data/aoi/taihu_subregions.geojson",
+    "note": "Prefer no-East-Taihu boundary for NDVI/FAI daily products to reduce macrophyte and shore-complex errors. Full OSM Taihu boundary is preserved as data/aoi/taihu_lake_boundary.geojson.",
+    "excluded_region": "East Taihu approximate exclusion bbox [120.35, 30.90, 120.95, 31.25]"
+  },
+  "grid": {
+    "analysis_crs": "EPSG:32651",
+    "storage_crs": "EPSG:4326",
+    "high_resolution_m": 30,
+    "sentinel2_native_m": 10,
+    "modis_native_m": 500,
+    "olci_native_m": 300
+  },
+  "thresholds": {
+    "fai_candidate": [
+      0.03,
+      0.05,
+      0.07,
+      0.1
+    ],
+    "mndwi_water_min": 0.0,
+    "min_valid_water_fraction_for_scene": 0.15,
+    "cloud_score_plus_clear_min": 0.6
+  },
+  "outputs": {
+    "coverage_table": "outputs/coverage/daily_sensor_coverage.csv",
+    "qa_area_table": "outputs/tables/daily_area_by_qa.csv",
+    "validation_table": "outputs/tables/leave_one_out_validation.csv"
+  }
+}

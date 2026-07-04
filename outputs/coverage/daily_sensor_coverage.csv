@@ -1,0 +1,9 @@
+date,sensor,collection,role,native_resolution_m,image_count,valid_water_fraction,cloud_fraction,status
+2024-05-01,HLS_L30,NASA/HLS/HLSL30/v002,high_resolution_main,30,0,TODO_compute_after_AOI_mask,TODO_compute_after_sensor_QA,COUNTED
+2024-05-01,HLS_S30,NASA/HLS/HLSS30/v002,high_resolution_main,30,2,TODO_compute_after_AOI_mask,TODO_compute_after_sensor_QA,COUNTED
+2024-05-01,S2_SR,COPERNICUS/S2_SR_HARMONIZED,10m_detail_check,10,0,TODO_compute_after_AOI_mask,TODO_compute_after_sensor_QA,COUNTED
+2024-05-01,L8_L2,LANDSAT/LC08/C02/T1_L2,30m_backup_and_long_term,30,0,TODO_compute_after_AOI_mask,TODO_compute_after_sensor_QA,COUNTED
+2024-05-01,L9_L2,LANDSAT/LC09/C02/T1_L2,30m_backup_and_long_term,30,0,TODO_compute_after_AOI_mask,TODO_compute_after_sensor_QA,COUNTED
+2024-05-01,MODIS_TERRA,MODIS/061/MOD09GA,daily_coarse_time_series,500,1,TODO_compute_after_AOI_mask,TODO_compute_after_sensor_QA,COUNTED
+2024-05-01,MODIS_AQUA,MODIS/061/MYD09GA,daily_coarse_time_series,500,1,TODO_compute_after_AOI_mask,TODO_compute_after_sensor_QA,COUNTED
+2024-05-01,S3_OLCI,COPERNICUS/S3/OLCI,water_color_auxiliary,300,2,TODO_compute_after_AOI_mask,TODO_compute_after_sensor_QA,COUNTED

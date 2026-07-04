@@ -1,0 +1,10 @@
+{
+  "0": {"name": "NODATA", "use_for_final_area": false, "description": "No usable data."},
+  "10": {"name": "HR_OBS_SAME_DAY", "use_for_final_area": true, "description": "Same-day high-resolution valid observation from HLS/S2/Landsat."},
+  "11": {"name": "HR_NEAR_DAY", "use_for_final_area": "separate", "description": "High-resolution nearest-day composite with absolute time difference <= 1 day."},
+  "20": {"name": "FUSION_ESTIMATE", "use_for_final_area": "separate_with_validation", "description": "STARFM/ESTARFM/FSDAF-style estimate, must report validation error."},
+  "30": {"name": "COARSE_DAILY", "use_for_final_area": "trend_only", "description": "MODIS Terra/Aqua or Sentinel-3 coarse-resolution evidence."},
+  "40": {"name": "TEMPORAL_INTERP", "use_for_final_area": false, "description": "Temporal interpolation only; not a direct remote-sensing observation."},
+  "90": {"name": "INVALID_MASKED", "use_for_final_area": false, "description": "Cloud, land, cloud shadow, sun glint, mixed shore, or outside main-lake mask."}
+}
+

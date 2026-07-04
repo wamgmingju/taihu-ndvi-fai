@@ -1,0 +1,14 @@
+{
+  "source": "data\\aoi\\taihu_lake_boundary.geojson",
+  "target": "data\\aoi\\taihu_lake_boundary_no_east_taihu.geojson",
+  "exclusion_bbox_wgs84": [
+    120.35,
+    30.9,
+    120.95,
+    31.25
+  ],
+  "original_area_km2_epsg32651": 2359.574,
+  "removed_area_km2_epsg32651": 332.384,
+  "kept_area_km2_epsg32651": 2027.19,
+  "reason": "East Taihu is macrophyte/shore-complex dominated and can introduce larger NDVI/FAI errors for algal-bloom daily products."
+}

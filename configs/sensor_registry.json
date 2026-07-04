@@ -1,0 +1,74 @@
+{
+  "HLS_L30": {
+    "collection": "NASA/HLS/HLSL30/v002",
+    "role": "high_resolution_main",
+    "native_resolution_m": 30,
+    "bands": {"blue": "B2", "green": "B3", "red": "B4", "nir": "B5", "swir1": "B6", "qa": "Fmask"},
+    "wavelength_nm": {"red": 655, "nir": 865, "swir1": 1609},
+    "scale_factor": 0.0001,
+    "preprocess": "Use HLS surface reflectance, decode Fmask, keep source sensor and acquisition time."
+  },
+  "HLS_S30": {
+    "collection": "NASA/HLS/HLSS30/v002",
+    "role": "high_resolution_main",
+    "native_resolution_m": 30,
+    "bands": {"blue": "B2", "green": "B3", "red": "B4", "red_edge1": "B5", "nir": "B8A", "swir1": "B11", "qa": "Fmask"},
+    "wavelength_nm": {"red": 665, "nir": 865, "swir1": 1610},
+    "scale_factor": 0.0001,
+    "preprocess": "Use HLS harmonized SR, decode Fmask, optionally keep red-edge indices as S30-only features."
+  },
+  "S2_SR": {
+    "collection": "COPERNICUS/S2_SR_HARMONIZED",
+    "role": "10m_detail_check",
+    "native_resolution_m": 10,
+    "bands": {"blue": "B2", "green": "B3", "red": "B4", "nir": "B8", "nir_narrow": "B8A", "swir1": "B11", "scl": "SCL"},
+    "wavelength_nm": {"red": 665, "nir": 865, "swir1": 1610},
+    "scale_factor": 0.0001,
+    "preprocess": "Use SCL plus Cloud Score+; do not rely only on QA60."
+  },
+  "L8_L2": {
+    "collection": "LANDSAT/LC08/C02/T1_L2",
+    "role": "30m_backup_and_long_term",
+    "native_resolution_m": 30,
+    "bands": {"blue": "SR_B2", "green": "SR_B3", "red": "SR_B4", "nir": "SR_B5", "swir1": "SR_B6", "qa": "QA_PIXEL", "radsat": "QA_RADSAT"},
+    "wavelength_nm": {"red": 655, "nir": 865, "swir1": 1609},
+    "scale_factor": 0.0000275,
+    "offset": -0.2,
+    "preprocess": "Apply Collection 2 L2 scale/offset and QA_PIXEL cloud, shadow, snow, cirrus, dilated cloud masks."
+  },
+  "L9_L2": {
+    "collection": "LANDSAT/LC09/C02/T1_L2",
+    "role": "30m_backup_and_long_term",
+    "native_resolution_m": 30,
+    "bands": {"blue": "SR_B2", "green": "SR_B3", "red": "SR_B4", "nir": "SR_B5", "swir1": "SR_B6", "qa": "QA_PIXEL", "radsat": "QA_RADSAT"},
+    "wavelength_nm": {"red": 655, "nir": 865, "swir1": 1609},
+    "scale_factor": 0.0000275,
+    "offset": -0.2,
+    "preprocess": "Same as L8; keep L8/L9 source separate for bias checks."
+  },
+  "MODIS_TERRA": {
+    "collection": "MODIS/061/MOD09GA",
+    "role": "daily_coarse_time_series",
+    "native_resolution_m": 500,
+    "bands": {"red": "sur_refl_b01", "nir": "sur_refl_b02", "swir1240": "sur_refl_b05", "swir1": "sur_refl_b06", "state": "state_1km", "qc": "QC_500m"},
+    "wavelength_nm": {"red": 645, "nir": 858, "swir1240": 1240, "swir1": 1640},
+    "scale_factor": 0.0001,
+    "preprocess": "Decode state_1km and QC_500m; export Terra separately. Compute both FAI_1240 and FAI_1640 for sensitivity checks."
+  },
+  "MODIS_AQUA": {
+    "collection": "MODIS/061/MYD09GA",
+    "role": "daily_coarse_time_series",
+    "native_resolution_m": 500,
+    "bands": {"red": "sur_refl_b01", "nir": "sur_refl_b02", "swir1240": "sur_refl_b05", "swir1": "sur_refl_b06", "state": "state_1km", "qc": "QC_500m"},
+    "wavelength_nm": {"red": 645, "nir": 858, "swir1240": 1240, "swir1": 1640},
+    "scale_factor": 0.0001,
+    "preprocess": "Decode state_1km and QC_500m; export Aqua separately, then make best-pixel Terra+Aqua composite. Compute both FAI_1240 and FAI_1640 for sensitivity checks."
+  },
+  "S3_OLCI": {
+    "collection": "COPERNICUS/S3/OLCI",
+    "role": "water_color_auxiliary",
+    "native_resolution_m": 300,
+    "bands": {"toa_radiance": "Oa##_radiance", "quality": "quality_flags"},
+    "preprocess": "GEE collection is L1 EFR TOA radiance; use only as auxiliary unless L2 water-leaving reflectance is supplied."
+  }
+}

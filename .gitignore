@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.codex_resources.json
+
+# Temporary and retry artifacts.
+outputs/rasters/**/hls_tiles/
+*.tmp
+*.zip
+
+# Local credentials should never be committed.
+.config/
+credentials/
+*.json.private

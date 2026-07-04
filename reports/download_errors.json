@@ -1,0 +1,17 @@
+[
+  {
+    "date": "2024-05-14",
+    "product": "hls",
+    "error": "RuntimeError('Failed to download D:\\\\trae work\\\\taihu_ndvi_fai\\\\codex版\\\\outputs\\\\rasters\\\\hls_observed\\\\Taihu_HLS_observed_NDVI_FAI_QA_20240514.tif: Total request size (231102525 bytes) must be less than or equal to 50331648 bytes.')"
+  },
+  {
+    "date": "2024-05-17",
+    "product": "hls",
+    "error": "RuntimeError('Failed to download D:\\\\trae work\\\\taihu_ndvi_fai\\\\codex版\\\\outputs\\\\rasters\\\\hls_observed\\\\Taihu_HLS_observed_NDVI_FAI_QA_20240517.tif: Total request size (231102525 bytes) must be less than or equal to 50331648 bytes.')"
+  },
+  {
+    "date": "2024-07-31",
+    "product": "hls",
+    "error": "RuntimeError('Failed to download D:\\\\trae work\\\\taihu_ndvi_fai\\\\codex版\\\\outputs\\\\rasters\\\\hls_observed\\\\Taihu_HLS_observed_NDVI_FAI_QA_20240731.tif: Total request size (231102525 bytes) must be less than or equal to 50331648 bytes.')"
+  }
+]

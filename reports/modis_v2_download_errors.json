@@ -1,0 +1,22 @@
+[
+  {
+    "date": "2024-05-17",
+    "product": "modis_v2_fai1240",
+    "error": "RuntimeError(\"Failed to download D:\\\\trae work\\\\taihu_ndvi_fai\\\\codex版\\\\outputs\\\\rasters\\\\modis_daily_v2_fai1240\\\\Taihu_MODIS_daily_v2_NDVI_FAI1640_FAI1240_QA_20240517.tif: HTTPSConnectionPool(host='earthengine.googleapis.com', port=443): Max retries exceeded with url: /v1/projects/dulcet-nucleus-498308-g8/thumbnails/14df7bdfd0a187ad16155c69953f3cfc-92417236eb5c68740898f1bdf0bbb07f:getPixels (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:992)')))\")"
+  },
+  {
+    "date": "2024-05-24",
+    "product": "modis_v2_fai1240",
+    "error": "RuntimeError(\"Failed to download D:\\\\trae work\\\\taihu_ndvi_fai\\\\codex版\\\\outputs\\\\rasters\\\\modis_daily_v2_fai1240\\\\Taihu_MODIS_daily_v2_NDVI_FAI1640_FAI1240_QA_20240524.tif: HTTPSConnectionPool(host='earthengine.googleapis.com', port=443): Max retries exceeded with url: /v1/projects/dulcet-nucleus-498308-g8/thumbnails/6bc04e14cba1dd50cf2fc5e64bebdec1-6c4ad60d09f9adabb45de5358b0c4c11:getPixels (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:992)')))\")"
+  },
+  {
+    "date": "2024-05-25",
+    "product": "modis_v2_fai1240",
+    "error": "RuntimeError(\"Failed to download D:\\\\trae work\\\\taihu_ndvi_fai\\\\codex版\\\\outputs\\\\rasters\\\\modis_daily_v2_fai1240\\\\Taihu_MODIS_daily_v2_NDVI_FAI1640_FAI1240_QA_20240525.tif: HTTPSConnectionPool(host='earthengine.googleapis.com', port=443): Max retries exceeded with url: /v1/projects/dulcet-nucleus-498308-g8/thumbnails/6621d674fbd6545796d945da5a7b209b-13ca5542d6b20498de9a7f697ea71e3b:getPixels (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:992)')))\")"
+  },
+  {
+    "date": "2024-05-28",
+    "product": "modis_v2_fai1240",
+    "error": "RuntimeError(\"Failed to download D:\\\\trae work\\\\taihu_ndvi_fai\\\\codex版\\\\outputs\\\\rasters\\\\modis_daily_v2_fai1240\\\\Taihu_MODIS_daily_v2_NDVI_FAI1640_FAI1240_QA_20240528.tif: HTTPSConnectionPool(host='earthengine.googleapis.com', port=443): Max retries exceeded with url: /v1/projects/dulcet-nucleus-498308-g8/thumbnails/77d69ede3731e65a6dc23e1a79d5d250-b6d8e1ee62decf9ecaa09be9bac68bc6:getPixels (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:992)')))\")"
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "python": "3.11.1 (tags/v3.11.1:a7a450f, Dec  6 2022, 19:58:39) [MSC v.1934 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "root": "D:\\trae work\\taihu_ndvi_fai\\codex版",
+  "date_range": {
+    "start": "2024-05-01",
+    "end": "2024-07-31"
+  },
+  "analysis_crs": "EPSG:32651",
+  "sensor_count": 8,
+  "modules": {
+    "ee": {
+      "available": true,
+      "version": "1.7.32"
+    },
+    "numpy": {
+      "available": true,
+      "version": "2.4.6"
+    },
+    "pandas": {
+      "available": true,
+      "version": "3.0.3"
+    },
+    "rasterio": {
+      "available": true,
+      "version": "1.4.4"
+    },
+    "geopandas": {
+      "available": true,
+      "version": "1.1.3"
+    },
+    "pyproj": {
+      "available": true,
+      "version": "3.7.2"
+    },
+    "shapely": {
+      "available": true,
+      "version": "2.1.2"
+    }
+  },
+  "aoi_files": {
+    "lake_boundary_exists": false,
+    "subregions_exists": false
+  }
+}

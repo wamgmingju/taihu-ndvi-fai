@@ -1,0 +1,10 @@
+{
+  "output": "data/aoi/taihu_lake_boundary.geojson",
+  "source": "https://overpass-api.de/api/interpreter",
+  "osm_relation_id": 1126533,
+  "selected_name": "Taihu Lake",
+  "selected_name_en": "Taihu Lake",
+  "area_km2_epsg32651": 2359.574,
+  "ways_total": 73,
+  "note": "temporary reproducible lake boundary; replace with official Taihu boundary if available"
+}
