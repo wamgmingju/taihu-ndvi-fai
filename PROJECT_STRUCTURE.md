@@ -35,6 +35,9 @@ data/aoi/taihu_lake_boundary_no_east_taihu.geojson
 - `outputs/coverage/daily_valid_coverage_no_east_taihu.csv`：去东太湖后每日 HLS/MODIS 有效水体覆盖率。
 - `outputs/rasters/modis_daily_v2_fai1240_no_east_taihu/`：MODIS v2 真实观测层，92 天。
 - `outputs/rasters/modis_daily_v2_fai1240_no_east_taihu_gapfilled_linear/`：MODIS v2 线性时间插值每日工作层，92 天。
+- `outputs/rasters/final_daily_ndvi_fai_no_east_taihu/NDVI/`：最终交付 NDVI 单波段图，92 张。
+- `outputs/rasters/final_daily_ndvi_fai_no_east_taihu/FAI/`：最终交付 FAI 单波段图，92 张。
+- `outputs/rasters/final_daily_ndvi_fai_no_east_taihu/STATUS/`：最终交付配套状态图，92 张。
 - `outputs/rasters/hls_observed_no_east_taihu/`：HLS 30 m 高分真实观测层，当前 3 天。
 - `outputs/tables/modis_v2_fai1240_no_east_taihu_raster_summary.csv`：MODIS v2 真观测层每日自检表。
 - `outputs/tables/modis_v2_fai1240_no_east_taihu_gapfilled_status_summary.csv`：gap-filled 层每日状态统计。
@@ -44,6 +47,7 @@ data/aoi/taihu_lake_boundary_no_east_taihu.geojson
 - 日期范围：2024-05-01 至 2024-07-31，共 92 天。
 - MODIS v2 真观测层：92 个 GeoTIFF；其中 35 天有真实有效像元，57 天无真实有效像元。
 - MODIS v2 gap-filled 层：92 个 GeoTIFF，每天 1 个。
+- 最终每日两图交付：NDVI 92 张、FAI 92 张。
 - HLS 去东太湖观测层：3 个 GeoTIFF，日期为 2024-05-14、2024-05-17、2024-07-31。
 
 ## 脚本分类
@@ -57,6 +61,9 @@ data/aoi/taihu_lake_boundary_no_east_taihu.geojson
 - `16_time_interpolate_modis_daily.py`：对 MODIS v2 `NDVI` 和 `FAI_1240` 做逐像元线性时间插值。
 - `17_summarize_gapfilled_status.py`：汇总插值层每天观测/插值/缺失像元数。
 - `18_exclude_east_taihu_from_aoi.py`：生成去东太湖 AOI。
+- `19_compare_hls_modis_consistency.py`：HLS 聚合到 MODIS 网格后做同日一致性检查。
+- `20_gis_readiness_and_quicklooks.py`：检查 ArcGIS/QGIS 可读性并生成快速预览图。
+- `21_export_daily_ndvi_fai_singleband.py`：把多波段工作层拆成最终 NDVI/FAI 单波段每日图。
 
 ## 最容易混淆的一点
 
@@ -65,10 +72,17 @@ data/aoi/taihu_lake_boundary_no_east_taihu.geojson
 - `observed`：真实卫星观测，有云、云影或异常反射率就保留缺测。
 - `gapfilled`：为了得到每日一张图而生成的估算层，必须结合 `STATUS` 波段解释。
 
-目前最接近目标的每日产品是：
+最终每日两图产品是：
 
 ```text
-outputs/rasters/modis_daily_v2_fai1240_no_east_taihu_gapfilled_linear/
+outputs/rasters/final_daily_ndvi_fai_no_east_taihu/NDVI/
+outputs/rasters/final_daily_ndvi_fai_no_east_taihu/FAI/
 ```
 
-但它不是“每天每个像元都是真实观测”。真正可靠的表达方式是：每天一张 NDVI/FAI 工作图，加上 `STATUS` 说明每个像元来自真实观测、时间插值或仍缺失。
+配套状态图在：
+
+```text
+outputs/rasters/final_daily_ndvi_fai_no_east_taihu/STATUS/
+```
+
+但这些图不是“每天每个像元都是真实观测”。真正可靠的表达方式是：每天一张 NDVI、一张 FAI，加上 `STATUS` 说明每个像元来自真实观测、时间插值或仍缺失。

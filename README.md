@@ -12,7 +12,20 @@
 D:\trae work\taihu_ndvi_fai\codex版
 ```
 
-每日工作产品：
+最终每日两图交付产品：
+
+```text
+outputs/rasters/final_daily_ndvi_fai_no_east_taihu/NDVI/
+outputs/rasters/final_daily_ndvi_fai_no_east_taihu/FAI/
+```
+
+其中 `NDVI/` 有 92 张单波段 GeoTIFF，`FAI/` 有 92 张单波段 GeoTIFF。配套可信度图层为：
+
+```text
+outputs/rasters/final_daily_ndvi_fai_no_east_taihu/STATUS/
+```
+
+每日多波段工作产品：
 
 ```text
 outputs/rasters/modis_daily_v2_fai1240_no_east_taihu_gapfilled_linear/
@@ -21,7 +34,7 @@ outputs/rasters/modis_daily_v2_fai1240_no_east_taihu_gapfilled_linear/
 说明：
 
 - 时间范围：2024-05-01 到 2024-07-31，共 92 天。
-- 文件数量：92 个 GeoTIFF，每天 1 个。
+- 文件数量：最终 NDVI 92 张、FAI 92 张、STATUS 92 张；多波段工作层 92 个 GeoTIFF。
 - 空间分辨率：MODIS 原生 500 m 网格。
 - 波段：
   1. `NDVI`
@@ -55,6 +68,7 @@ outputs/rasters/hls_observed_no_east_taihu/
 - MODIS v2 无真实有效像元的日期：57 天。
 - MODIS v2 真观测有效像元总数：46,867。
 - MODIS v2 每日 gap-filled 层：92 天文件齐全。
+- 最终单波段交付层：NDVI 92 张，FAI 92 张，STATUS 92 张。
 - gap-filled 总像元状态：
   - 真实观测：46,867
   - 线性插值：341,088
@@ -89,6 +103,8 @@ outputs/rasters/hls_observed_no_east_taihu/
 - `outputs/coverage/daily_valid_coverage_no_east_taihu.csv`
 - `outputs/tables/modis_v2_fai1240_no_east_taihu_raster_summary.csv`
 - `outputs/tables/modis_v2_fai1240_no_east_taihu_gapfilled_status_summary.csv`
+- `outputs/tables/gis_readiness_gapfilled_no_east_taihu.csv`
+- `reports/final_objective_audit_manual_reproduction_20260704.md`
 
 ## 主要脚本
 
@@ -98,6 +114,8 @@ outputs/rasters/hls_observed_no_east_taihu/
 - `scripts/15_download_modis_daily_v2_fai1240.py`：MODIS v2 日产品下载，输出 `FAI_1640` 和 `FAI_1240`。
 - `scripts/16_time_interpolate_modis_daily.py`：按像元做线性时间插值，生成每日工作层。
 - `scripts/17_summarize_gapfilled_status.py`：汇总每日观测/插值/缺失像元。
+- `scripts/20_gis_readiness_and_quicklooks.py`：检查 GIS 可读性并生成预览图。
+- `scripts/21_export_daily_ndvi_fai_singleband.py`：导出最终每日 NDVI/FAI 单波段 GeoTIFF。
 
 ## 参考文献
 
