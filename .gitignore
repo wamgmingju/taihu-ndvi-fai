@@ -6,6 +6,7 @@ __pycache__/
 outputs/rasters/**/hls_tiles/
 *.tmp
 *.zip
+*.aux.xml
 
 # Local credentials should never be committed.
 .config/
